@@ -5,6 +5,7 @@
     height:4em;    
     text-align:center;    
     background-color:white;
+    box-shadow: 0 0 40px rgba(0,0,0,0.2);
 }
 
 .navbar ul {

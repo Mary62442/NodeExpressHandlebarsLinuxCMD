@@ -9,7 +9,15 @@ app.use(express.static(path.join(__dirname, '/static')));
 app.engine('handlebars', exphbs({defaultLayout:'main'}));
 app.set('view engine', 'handlebars');
 app.get('/', (req,res) => {
-	res.render('home');
+
+	request('http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1', (err,response,body) => {
+
+	let quote = JSON.parse(body)[0].content;
+	let quoter = JSON.parse(body)[0].title;
+	res.render('home', {quote:quote, quoter:quoter});
+
+	})
+	
 });
 
 app.get('/about', (req,res) => {

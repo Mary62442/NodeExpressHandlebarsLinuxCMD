@@ -35,3 +35,45 @@ body {
 .home-presentation >p {
 	line-height:1.5em;
 }
+
+.quote-container {
+	width:100%;
+	height:100vh;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+}
+
+#quote {
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	justify-content: center;
+	max-width:600px;
+	opacity:0;
+	transition: all 0.2s ease-out;
+	margin-bottom:-30px;
+}
+
+.quote blockquote {	
+	border-left: 10px solid #8BBD98;
+	margin: 0;
+    padding: 1em 0 1em 1em;
+	quotes: "\201C""\201D""\2018""\2019";
+  }
+  .quote blockquote:before {
+	color: #8BBD98;
+	content: open-quote;
+	font-size: 4em;
+	line-height: 0.1em;	
+	vertical-align: -0.4em;
+  }
+blockquote p {
+	display: inline;
+	line-height:2em;
+  }
+
+  .quote h3 {
+	  align-self:flex-end;
+	  margin:0;
+   }
