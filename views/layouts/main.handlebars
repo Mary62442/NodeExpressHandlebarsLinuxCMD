@@ -3,39 +3,18 @@
 <head>
     <meta charset="utf-8">
     <title>Example App</title>
-<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-<link href="/assets/css/aboutstyles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="/assets/css/aboutstyles.css" rel="stylesheet">
 	<link href="/assets/css/homestyles.css" rel="stylesheet">
+    <link href="/assets/css/mainstyles.css" rel="stylesheet">
 </head>
-<style>
-.navbar {
-width:100%;
-position:fixed;
-height:4em;
-display:flex;
-text-align:center;
-justify-content:center;
-background-color:white;
-}
-
-.navbar > a {
-text-decoration:none;
-padding: 0 1em;
-color:#001B32;
-font-size:1.2em;
-transition:color 0.1s linear;
-}
-
-.navbar > a:hover {
-color:#034657;
-}
-</style>
 <body>
-<nav class = "navbar">
-<a href="/">Home</a>
-<a href="/about" > About</a>
-
-</nav> 
+    <nav class = "navbar">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about" > About</a></li>
+        </ul>
+    </nav> 
     {{{body}}}
  
 </body>
