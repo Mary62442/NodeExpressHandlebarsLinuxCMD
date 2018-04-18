@@ -42,6 +42,8 @@ body {
 	display:flex;
 	align-items:center;
 	justify-content:center;
+	position:relative;
+	z-index:1;
 }
 
 #quote {
@@ -73,7 +75,46 @@ blockquote p {
 	line-height:2em;
   }
 
-  .quote h3 {
-	  align-self:flex-end;
-	  margin:0;
-   }
+.quote h3 {
+	align-self:flex-end;
+	margin:0;
+}
+
+#change-quote {
+	position:absolute;
+	bottom:2em;
+	right:2em;
+	border-radius:50%;
+	box-shadow: 0 5px 20px rgba(0,0,0,.2);
+	background-color:transparent;
+	padding:1em;
+	border:none;
+	font-size:1.2em;
+	color:#8BBD98;
+	cursor:pointer;
+	transition:all 0.2s ease-out;
+	overflow:hidden;
+	outline:none;
+}
+
+#change-quote:before {
+	position:absolute;
+	top:0;
+	right:100%;
+	width:100%;
+	height:100%;
+	background-color:#8BBD98;
+	content:'';
+	z-index:-1;
+	transition:all 0.2s ease-out;	
+}
+
+#change-quote:hover {
+	color:white;
+	box-shadow: 0 5px 20px rgba(0,0,0,.4);
+	bottom:2.2em;
+}
+
+#change-quote:hover:before {	
+	right:0;
+}
