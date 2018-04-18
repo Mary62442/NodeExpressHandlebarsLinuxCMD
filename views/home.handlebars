@@ -18,18 +18,39 @@ Aruba using the domain name www.mvburlando.cloud.</p>
 </button>
 </section>
 
-<section class = "google-books-container">
-	<div class ="book-background">
-		<div style = "background-image: linear-gradient(to top, rgba(255,255,255,0.1), rgba(255,255,255,0.1)), url('{{waves.imageLinks.small}}')"></div>
+<section class = "google-books-container">	
+	<div class = "the-book">
+		<div class ="book-background">
+			<div style = "background-image: linear-gradient(to left, rgba(255,255,255,0.1), rgba(255,255,255,0.1)), url('{{waves.imageLinks.small}}')"></div>
+		</div>
+		
+		<div class = "the-book-description">
+			<h1>{{waves.title}}</h1>
+			<span>{{waves.authors}}</span>
+			<p>{{waves.description}}</p>
+			<div class = "book-data-flex">
+				<div>
+					<h3>Categories:</h3>
+					<ul>
+					{{#each waves.categories}}
+						<li>{{this}}</li>
+					{{/each}}
+					</ul>
+				</div>
+				<div>
+					<p>Publisher: {{waves.publisher}}</p>
+					<p>Page count: {{waves.pageCount}}</p>
+					<p>ISBN: {{waves.industryIdentifiers.0.identifier}}</p>
+				</div>
+				
+				
+			</div>
+			
+		</div>
+
+		<img src="{{waves.imageLinks.small}}"/>
+		
 	</div>
-	<h1>{{waves.title}}</h1><span>{{waves.authors}}</span>
-	<ul>
-	{{#each waves.categories}}
-	<li>{{this}}</li>
-	{{/each}}
-	</ul>
-	<img src="{{waves.imageLinks.small}}"/>
-	<p>{{waves.description}}</p>
 
 
 </section>
