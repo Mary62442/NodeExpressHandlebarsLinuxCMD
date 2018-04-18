@@ -1,120 +1,128 @@
+@charset "UTF-8";
+html,
+body,
+ul,
+ol {
+  margin: 0;
+  padding: 0; }
+
 body {
-	font-family: 'Montserrat', sans-serif;
-	margin:0;
-	padding:0;
-}
+  font-family: 'Montserrat', sans-serif;
+  color: #0D324D; }
 
 .home-presentation {
-	color:white;
-	display:flex;
-	flex-direction:column;
-	box-sizing: border-box;
-	align-items:center;
-	padding: 8em 0 0 0;
-	justify-content:flex-start;
-	width:100%;
-	background: linear-gradient(to top left, rgba(0,0,0,0.3), rgba(0,0,0,0)),url('/assets/images/aurora.jpg');
-	height:100vh;
-	background-size:cover;
-	background-repeat:no-repeat;
-	background-position:50% 100%;
-}
-.home-presentation > h1, .home-presentation > p {
-	max-width:800px;
-	text-align:center;
-}
-
-.home-presentation hr {
-	max-width:800px;
-	border:none;
-	height:2px;
-	width:40%;
-	background:linear-gradient(to left, rgba(255,255,255,0),rgba(255,255,255,1),rgba(255,255,255,0))
-}
-
-.home-presentation >p {
-	line-height:1.5em;
-}
+  color: white;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  align-items: center;
+  padding: 8em 0 0 0;
+  justify-content: flex-start;
+  width: 100%;
+  background: linear-gradient(to top left, rgba(0, 0, 0, 0.3), transparent), url("/assets/images/aurora.jpg");
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 100%; }
+  .home-presentation h1, .home-presentation p {
+    max-width: 800px;
+    text-align: center; }
+  .home-presentation p {
+    line-height: 1.5em; }
+  .home-presentation hr {
+    max-width: 800px;
+    border: none;
+    height: 2px;
+    width: 40%;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), white, rgba(255, 255, 255, 0)); }
 
 .quote-container {
-	width:100%;
-	height:100vh;
-	display:flex;
-	align-items:center;
-	justify-content:center;
-	position:relative;
-	z-index:1;
-}
-
-#quote {
-	display:flex;
-	flex-direction:column;
-	align-items:center;
-	justify-content: center;
-	max-width:600px;
-	opacity:0;
-	transition: all 0.2s ease-out;
-	margin-bottom:-30px;
-}
-
-.quote blockquote {	
-	border-left: 10px solid #8BBD98;
-	margin: 0;
-    padding: 1em 0 1em 1em;
-	quotes: "\201C""\201D""\2018""\2019";
-  }
-  .quote blockquote:before {
-	color: #8BBD98;
-	content: open-quote;
-	font-size: 4em;
-	line-height: 0.1em;	
-	vertical-align: -0.4em;
-  }
-blockquote p {
-	display: inline;
-	line-height:2em;
-  }
-
-.quote h3 {
-	align-self:flex-end;
-	margin:0;
-}
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1; }
+  .quote-container #quote {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 600px;
+    opacity: 0;
+    transition: all 0.2s ease-out;
+    margin-bottom: -30px; }
+    .quote-container #quote h3 {
+      align-self: flex-end;
+      margin: 0; }
+    .quote-container #quote blockquote {
+      border-left: 10px solid #8BBD98;
+      margin: 0;
+      padding: 1em 0 1em 1em;
+      quotes: "“" "”" "‘" "’"; }
+      .quote-container #quote blockquote:before {
+        color: #8BBD98;
+        content: open-quote;
+        font-size: 4em;
+        line-height: 0.1em;
+        vertical-align: -0.4em; }
+      .quote-container #quote blockquote p {
+        display: inline;
+        line-height: 2em; }
 
 #change-quote {
-	position:absolute;
-	bottom:2em;
-	right:2em;
-	border-radius:50%;
-	box-shadow: 0 5px 20px rgba(0,0,0,.2);
-	background-color:transparent;
-	padding:1em;
-	border:none;
-	font-size:1.2em;
-	color:#8BBD98;
-	cursor:pointer;
-	transition:all 0.2s ease-out;
-	overflow:hidden;
-	outline:none;
-}
+  position: absolute;
+  bottom: 2em;
+  right: 2em;
+  border-radius: 50%;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  background-color: transparent;
+  padding: 1em;
+  border: none;
+  font-size: 1.2em;
+  color: #8BBD98;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+  overflow: hidden;
+  outline: none; }
+  #change-quote:before {
+    position: absolute;
+    top: 0;
+    right: 100%;
+    width: 100%;
+    height: 100%;
+    background-color: #8BBD98;
+    content: '';
+    z-index: -1;
+    transition: all 0.2s ease-out; }
+  #change-quote:hover {
+    color: white;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    bottom: 2.2em; }
+  #change-quote:hover:before {
+    right: 0; }
 
-#change-quote:before {
-	position:absolute;
-	top:0;
-	right:100%;
-	width:100%;
-	height:100%;
-	background-color:#8BBD98;
-	content:'';
-	z-index:-1;
-	transition:all 0.2s ease-out;	
-}
-
-#change-quote:hover {
-	color:white;
-	box-shadow: 0 5px 20px rgba(0,0,0,.4);
-	bottom:2.2em;
-}
-
-#change-quote:hover:before {	
-	right:0;
-}
+.google-books-container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden; }
+  .google-books-container .book-background {
+    position: absolute;
+    height: 1000px;
+    width: 500px;
+    right: -10%;
+    top: -8%;
+    transform: rotate(30deg);
+    overflow: hidden;
+    border-left: 5px solid rgba(0, 0, 0, 0.1); }
+    .google-books-container .book-background div {
+      background-size: cover;
+      position: absolute;
+      height: 110%;
+      width: 110%;
+      top: -10%;
+      left: -10%;
+      filter: blur(10px);
+      overflow: hidden; }

@@ -13,11 +13,11 @@ $( window ).scroll(() => {
 
 $('#change-quote').on('click', (e) => {
     e.preventDefault();
-    $("#quote").css("opacity", "0");  
+    $("#quote").css({"opacity": "0", "margin-bottom":"-30px"});  
     $.ajax( {
       url: '/newquote',
       success: (data) => {  
-        $("#quote").css("opacity", "1");        
+        $("#quote").css({"opacity": "1", "margin-bottom":"0"});        
         $('#quoter').text(data.quoter);
         $('#blockquote').html(data.quote);
       },

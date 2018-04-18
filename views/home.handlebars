@@ -16,6 +16,20 @@ Aruba using the domain name www.mvburlando.cloud.</p>
 	<button title="Get a random quote!" id="change-quote" ><i class="fa fa-random"></i>
 
 </button>
+</section>
+
+<section class = "google-books-container">
+	<div class ="book-background">
+		<div style = "background-image: linear-gradient(to top, rgba(255,255,255,0.1), rgba(255,255,255,0.1)), url('{{waves.imageLinks.small}}')"></div>
+	</div>
+	<h1>{{waves.title}}</h1><span>{{waves.authors}}</span>
+	<ul>
+	{{#each waves.categories}}
+	<li>{{this}}</li>
+	{{/each}}
+	</ul>
+	<img src="{{waves.imageLinks.small}}"/>
+	<p>{{waves.description}}</p>
 
 
 </section>

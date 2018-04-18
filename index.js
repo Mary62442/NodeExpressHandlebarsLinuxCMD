@@ -23,10 +23,14 @@ app.get('/', (req,res) => {
 
 	request.get('https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1', (err,response,body) => {
 
-	let quote = JSON.parse(body)[0].content;
-	let quoter = JSON.parse(body)[0].title;
-	res.render('home', {quote:quote, quoter:quoter});
+		let quote = JSON.parse(body)[0].content;
+		let quoter = JSON.parse(body)[0].title;
 
+		request.get('https://www.googleapis.com/books/v1/volumes/WwkjDgAAQBAJ', (err, response, body) => {
+			var theWaves = JSON.parse(body).volumeInfo;
+
+			res.render('home', {quote:quote, quoter:quoter, waves:theWaves});
+		})		
 	})
 });
 
