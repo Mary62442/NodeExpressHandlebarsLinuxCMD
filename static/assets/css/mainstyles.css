@@ -10,34 +10,84 @@ button {
   border: none;
   cursor: pointer; }
 
+.navbar button, .navbar ul {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.2); }
+
 .navbar {
   position: fixed;
-  text-align: center;
-  box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
-  z-index: 2; }
+  z-index: 2;
+  top: 50%;
+  left: 0;
+  transform: translatey(-50%); }
   .navbar button {
     font-size: 2em;
     color: #8BBD98;
     background-color: white;
-    width: 100%;
+    width: 2em;
     padding: 0.3em 0.5em;
-    transition: all 0.2s ease-out; }
+    transition: color 0.2s ease-out; }
     .navbar button:hover {
       color: #0D324D; }
   .navbar ul {
-    width: 300px;
+    width: 200px;
     padding: 0;
     background-color: white;
     list-style-type: none;
     margin: 0;
-    min-height: 100vh;
-    display: none; }
+    display: none;
+    z-index: 1;
+    position: relative; }
     .navbar ul li {
-      padding: 1em 0; }
+      padding: 1em 0 1em 1em;
+      position: relative; }
+      .navbar ul li:first-of-type {
+        border-left: 10px solid #0D324D; }
+        .navbar ul li:first-of-type:before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 0;
+          height: 100%;
+          transition: all 0.2s ease-out;
+          background-color: #469fe0;
+          z-index: -1; }
+        .navbar ul li:first-of-type:hover:before {
+          width: 100%; }
+      .navbar ul li:nth-of-type(2) {
+        border-left: 10px solid #5ba06d; }
+        .navbar ul li:nth-of-type(2):before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 0;
+          height: 100%;
+          transition: all 0.2s ease-out;
+          background-color: #8BBD98;
+          z-index: -1; }
+        .navbar ul li:nth-of-type(2):hover:before {
+          width: 100%; }
+      .navbar ul li:nth-of-type(3) {
+        border-left: 10px solid #3D2642; }
+        .navbar ul li:nth-of-type(3):before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 0;
+          height: 100%;
+          transition: all 0.2s ease-out;
+          background-color: #ab7fb5;
+          z-index: -1; }
+        .navbar ul li:nth-of-type(3):hover:before {
+          width: 100%; }
       .navbar ul li a {
         text-decoration: none;
         color: #0D324D;
         font-size: 1.2em;
         transition: color 0.1s linear; }
         .navbar ul li a:hover {
-          color: #8BBD98; }
+          color: #f1c500; }

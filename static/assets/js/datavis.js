@@ -1,12 +1,17 @@
 $(document).ready(()=> { 
 
     $('#nav-button').click(()=> {
-        $('#nav-list').toggle('slide');        
+        $('#nav-button').hide('slide', {direction: "left"}, 100, () => {
+            $('#nav-list').show('slide', {direction: "left"}, 400 ); 
+        });
+             
     })
 
     $(window).on("click", (event) => {	
         if( $('.navbar').has(event.target).length == 0 && !$('.navbar').is(event.target)) {
-            $('#nav-list').fadeOut();
+            $('#nav-list').hide('slide', {direction: "left"}, 400, () => {
+                $('#nav-button').show('slide', {direction: "left"}, 100);
+            });            
         }
     });
 

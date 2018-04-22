@@ -1,20 +1,27 @@
 @import 'reset';
 @import 'websitecolors';
 
-.navbar {
-    
-    position:fixed;        
-    text-align:center;    
+%navborders {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
     box-shadow: 0 0 40px rgba(0,0,0,0.2);
-    z-index:2;    
+}
+
+.navbar {    
+    position:fixed;        
+    z-index:2; 
+    top:50%;
+    left:0; 
+    transform:translatey(-50%); 
 
     button {
+        @extend %navborders;        
         font-size:2em;
         color:$SeaGreen;
-        background-color:$White;
-        width:100%;
+        background-color:$White;       
+        width:2em;
         padding:0.3em 0.5em;
-        transition:all 0.2s ease-out;
+        transition:color 0.2s ease-out;
         
         &:hover {
             color: $Prussian;
@@ -22,16 +29,76 @@
     }
 
     ul {
-        width:300px;
+        @extend %navborders;
+        width:200px;
         padding:0;
         background-color:$White;
         list-style-type: none;
-        margin:0;
-        min-height:100vh;  
-        display:none;         
+        margin:0;       
+        display:none;    
+        z-index:1;    
+        position:relative;  
 
         li {            
-            padding:1em 0;
+            padding:1em 0 1em 1em;
+            position:relative;
+
+            &:first-of-type {
+                border-left: 10px solid $Prussian;
+
+                &:before {
+                    content:'';
+                    position:absolute;
+                    left:0;
+                    top:0;
+                    width:0;
+                    height:100%;
+                    transition:all 0.2s ease-out;
+                    background-color: lighten($Prussian, 40%);
+                    z-index:-1;
+                }
+                &:hover:before {
+                    width:100%;
+                }
+            }
+
+            &:nth-of-type(2) {
+                border-left: 10px solid darken($SeaGreen, 15%);
+
+                &:before {
+                    content:'';
+                    position:absolute;
+                    left:0;
+                    top:0;
+                    width:0;
+                    height:100%;
+                    transition:all 0.2s ease-out;
+                    background-color: $SeaGreen;
+                    z-index:-1;
+                }
+                &:hover:before {
+                    width:100%;
+                }
+            }
+
+            &:nth-of-type(3) {
+                border-left: 10px solid $Onyx;
+
+                &:before {
+                    content:'';
+                    position:absolute;
+                    left:0;
+                    top:0;
+                    width:0;
+                    height:100%;
+                    transition:all 0.2s ease-out;
+                    background-color: lighten($Onyx, 40%);
+                    z-index:-1;
+                }
+                &:hover:before {
+                    width:100%;
+                }
+            }
 
             a {
                 text-decoration:none;    
@@ -40,7 +107,7 @@
                 transition:color 0.1s linear;
 
                 &:hover {
-                    color:$SeaGreen;
+                    color:$Gold;
                 }
             }
             
