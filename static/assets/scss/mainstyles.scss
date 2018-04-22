@@ -2,26 +2,36 @@
 @import 'websitecolors';
 
 .navbar {
-    width:100%;
-    position:fixed;
-    height:4em;    
+    
+    position:fixed;        
     text-align:center;    
-    background-color:$White;
     box-shadow: 0 0 40px rgba(0,0,0,0.2);
-    z-index:2;
+    z-index:2;    
+
+    button {
+        font-size:2em;
+        color:$SeaGreen;
+        background-color:$White;
+        width:100%;
+        padding:0.3em 0.5em;
+        transition:all 0.2s ease-out;
+        
+        &:hover {
+            color: $Prussian;
+        }
+    }
 
     ul {
+        width:300px;
         padding:0;
+        background-color:$White;
         list-style-type: none;
         margin:0;
-        height:100%;
-        display:flex;
-        justify-content:center;
-        align-items:center;
+        min-height:100vh;  
+        display:none;         
 
-        li {
-            display:inline;
-            padding:0 1em;
+        li {            
+            padding:1em 0;
 
             a {
                 text-decoration:none;    

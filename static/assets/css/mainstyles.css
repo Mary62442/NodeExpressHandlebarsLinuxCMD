@@ -5,25 +5,35 @@ ol {
   margin: 0;
   padding: 0; }
 
+button {
+  outline: none;
+  border: none;
+  cursor: pointer; }
+
 .navbar {
-  width: 100%;
   position: fixed;
-  height: 4em;
   text-align: center;
-  background-color: white;
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
   z-index: 2; }
+  .navbar button {
+    font-size: 2em;
+    color: #8BBD98;
+    background-color: white;
+    width: 100%;
+    padding: 0.3em 0.5em;
+    transition: all 0.2s ease-out; }
+    .navbar button:hover {
+      color: #0D324D; }
   .navbar ul {
+    width: 300px;
     padding: 0;
+    background-color: white;
     list-style-type: none;
     margin: 0;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center; }
+    min-height: 100vh;
+    display: none; }
     .navbar ul li {
-      display: inline;
-      padding: 0 1em; }
+      padding: 1em 0; }
       .navbar ul li a {
         text-decoration: none;
         color: #0D324D;

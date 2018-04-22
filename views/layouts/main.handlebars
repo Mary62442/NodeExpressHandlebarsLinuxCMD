@@ -7,22 +7,29 @@
     <link href="/assets/css/aboutstyles.css" rel="stylesheet">
 	<link href="/assets/css/homestyles.css" rel="stylesheet">
     <link href="/assets/css/mainstyles.css" rel="stylesheet">
+     <link href="/assets/css/datavisstyles.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://use.fontawesome.com/78539691ab.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
 </head>
 <body>
+
+    
     
     <nav class = "navbar">
-        <ul>
+        <button id = "nav-button" ><i class="fa fa-bars"></i></button>
+        <ul id = "nav-list">
             <li><a href="/">Home</a></li>
             <li><a href="/about" > About</a></li>
+            <li><a href = "/datavis"> Visualization</a></li>
         </ul>
     </nav> 
     {{{body}}}
 
     <script src="/assets/js/home.js"></script>
+    <script src="/assets/js/datavis.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     
  
 </body>

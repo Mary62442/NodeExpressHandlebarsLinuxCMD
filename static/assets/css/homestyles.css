@@ -1,10 +1,14 @@
-@charset "UTF-8";
 html,
 body,
 ul,
 ol {
   margin: 0;
   padding: 0; }
+
+button {
+  outline: none;
+  border: none;
+  cursor: pointer; }
 
 body {
   font-family: 'Montserrat', sans-serif;
@@ -59,181 +63,17 @@ body {
     width: 40%;
     background: linear-gradient(to left, rgba(255, 255, 255, 0), white, rgba(255, 255, 255, 0)); }
 
-.quote-container {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  z-index: 1; }
-  .quote-container #quote {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    max-width: 600px;
-    opacity: 0;
-    transition: all 0.2s ease-out;
-    margin-bottom: -30px; }
-    .quote-container #quote h3 {
-      align-self: flex-end;
-      margin: 0; }
-    .quote-container #quote blockquote {
-      border-left: 10px solid #8BBD98;
-      margin: 0;
-      padding: 1em 0 1em 1em;
-      quotes: "“" "”" "‘" "’"; }
-      .quote-container #quote blockquote:before {
-        color: #8BBD98;
-        content: open-quote;
-        font-size: 4em;
-        line-height: 0.1em;
-        vertical-align: -0.4em; }
-      .quote-container #quote blockquote p {
-        display: inline;
-        line-height: 2em; }
-
-#change-quote {
-  position: absolute;
-  bottom: 2em;
-  right: 2em;
-  border-radius: 50%;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-  background-color: transparent;
-  padding: 1em;
-  border: none;
-  font-size: 1.2em;
-  color: #8BBD98;
-  cursor: pointer;
-  transition: all 0.2s ease-out;
-  overflow: hidden;
-  outline: none; }
-  #change-quote:before {
-    position: absolute;
-    top: 0;
-    right: 100%;
-    width: 100%;
-    height: 100%;
-    background-color: #8BBD98;
-    content: '';
-    z-index: -1;
-    transition: all 0.2s ease-out; }
-  #change-quote:hover {
-    color: white;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
-    bottom: 2.2em; }
-  #change-quote:hover:before {
-    right: 0; }
-
-.google-books-container {
-  width: 100%;
-  background-color: #f7f7f7;
-  background: linear-gradient(to bottom, rgba(13, 50, 77, 0.4), #f7f7f7), linear-gradient(to top left, rgba(0, 0, 0, 0.3), transparent), url("/assets/images/waves.jpg");
-  position: relative;
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: 50% 0%;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 5em 0; }
-  .google-books-container .the-book {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    min-height: 400px;
-    width: 70%;
-    height: 70vh;
-    margin: 0 auto;
-    position: relative;
-    overflow: hidden;
-    background-color: white;
-    border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
-    .google-books-container .the-book .book-background {
-      position: absolute;
-      height: 1000px;
-      width: 500px;
-      right: -30%;
-      bottom: 0;
-      transform: rotate(15deg);
-      transform-origin: bottom left;
-      overflow: hidden; }
-      .google-books-container .the-book .book-background div {
-        background-size: cover;
-        position: absolute;
-        height: 110%;
-        width: 110%;
-        top: -10%;
-        left: -10%;
-        filter: blur(10px);
-        overflow: hidden; }
-    .google-books-container .the-book .the-book-description {
-      width: 60%;
-      z-index: 1;
-      position: relative; }
-      .google-books-container .the-book .the-book-description h1 {
-        margin: 0 0 0.5em 0; }
-      .google-books-container .the-book .the-book-description .book-data-flex {
-        color: #AAAAAA;
-        display: flex;
-        align-items: flex-end;
-        justify-content: space-between; }
-        .google-books-container .the-book .the-book-description .book-data-flex ul {
-          list-style-type: none; }
-        .google-books-container .the-book .the-book-description .book-data-flex h3 {
-          margin: 0; }
-        .google-books-container .the-book .the-book-description .book-data-flex p, .google-books-container .the-book .the-book-description .book-data-flex li {
-          font-size: 0.8em;
-          margin: 0.3em 0 0 0; }
-    .google-books-container .the-book img {
-      width: 20%;
-      border-radius: 3px;
-      position: relative;
-      z-index: 1; }
-
-@media (min-width: 2000px) {
-  .google-books-container .the-book {
-    width: 60%;
-    height: 60vh; }
-    .google-books-container .the-book .book-background {
-      right: -10%; } }
-
 @media (min-width: 1600px) and (max-width: 2000px) {
   .hand-writing div {
     width: 1200px;
-    height: 242px; }
-  .google-books-container .the-book {
-    width: 60%;
-    height: 60vh; }
-    .google-books-container .the-book .book-background {
-      right: -20%; } }
+    height: 242px; } }
 
 @media (max-width: 1000px) {
   .hand-writing div {
     width: 600px;
-    height: 121px; }
-  .google-books-container {
-    height: initial; }
-    .google-books-container .the-book {
-      flex-direction: column;
-      min-height: 400px;
-      height: initial; }
-      .google-books-container .the-book .book-background {
-        display: none; }
-      .google-books-container .the-book .the-book-description {
-        width: 80%;
-        padding: 2em 0; }
-      .google-books-container .the-book img {
-        width: 50%;
-        padding-bottom: 2em; } }
+    height: 121px; } }
 
 @media (max-width: 600px) {
   .hand-writing div {
     width: 300px;
-    height: 60px; }
-  .google-books-container .the-book {
-    width: 90%; } }
+    height: 60px; } }

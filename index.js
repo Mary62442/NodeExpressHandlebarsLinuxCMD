@@ -19,19 +19,9 @@ app.use(allowCrossDomain);
 app.use(express.static(path.join(__dirname, '/static')));
 app.engine('handlebars', exphbs({defaultLayout:'main'}));
 app.set('view engine', 'handlebars');
+
 app.get('/', (req,res) => {
-
-	request.get('https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1', (err,response,body) => {
-
-		let quote = JSON.parse(body)[0].content;
-		let quoter = JSON.parse(body)[0].title;
-
-		request.get('https://www.googleapis.com/books/v1/volumes/WwkjDgAAQBAJ', (err, response, body) => {
-			var theWaves = JSON.parse(body).volumeInfo;
-
-			res.render('home', {quote:quote, quoter:quoter, waves:theWaves});
-		})		
-	})
+	res.render('home');
 });
 
 app.get('/newquote', (req,res) => {
@@ -46,6 +36,22 @@ app.get('/newquote', (req,res) => {
 
 app.get('/about', (req,res) => {
 	res.render('about');
+});
+
+
+app.get('/datavis', (req,res) => {
+
+	request.get('https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1', (err,response,body) => {
+
+		let quote = JSON.parse(body)[0].content;
+		let quoter = JSON.parse(body)[0].title;
+
+		request.get('https://www.googleapis.com/books/v1/volumes/WwkjDgAAQBAJ', (err, response, body) => {
+			var theWaves = JSON.parse(body).volumeInfo;
+
+			res.render('datavis', {quote:quote, quoter:quoter, waves:theWaves});
+		});	
+	});	
 });
 
 app.listen(3000);
