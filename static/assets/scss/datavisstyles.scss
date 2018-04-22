@@ -2,16 +2,33 @@
 @import 'websitecolors';
 
 .datavis-presentation {
-    width:100%;
-    height:100vh;
+	@extend %presentations;    
     background:linear-gradient( to top left, $Onyx, rgba($Onyx, .7)), url('/assets/images/bark.jpg');
-	background-attachment:fixed;
-	background-size:cover;
-	background-repeat: no-repeat;
-	color:white;
-    display:flex;
-    align-items:center;
-    justify-content: center;
+	background-attachment:fixed;	
+	h1 {
+		max-width:800px;
+		text-align:center;
+	}
+	p {
+		line-height:1.5em;
+		padding:0 2em;
+		box-sizing: border-box;
+		max-width:800px;
+		text-align:center;
+	}
+
+	hr {
+		max-width:800px;
+		border:none;
+		height:2px;
+		width:40%;
+		background:linear-gradient(to left, rgba(255,255,255,0),$White,rgba(255,255,255,0));
+	}
+
+	ul {
+		list-style-type: none;
+		li {text-align:center; font-weight: bold}
+	}
 }
 
 .quote-container {

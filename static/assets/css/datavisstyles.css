@@ -12,16 +12,40 @@ button {
   cursor: pointer; }
 
 .datavis-presentation {
-  width: 100%;
-  height: 100vh;
-  background: linear-gradient(to top left, #3D2642, rgba(61, 38, 66, 0.7)), url("/assets/images/bark.jpg");
-  background-attachment: fixed;
-  background-size: cover;
-  background-repeat: no-repeat;
   color: white;
   display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+.datavis-presentation {
+  background: linear-gradient(to top left, #3D2642, rgba(61, 38, 66, 0.7)), url("/assets/images/bark.jpg");
+  background-attachment: fixed; }
+  .datavis-presentation h1 {
+    max-width: 800px;
+    text-align: center; }
+  .datavis-presentation p {
+    line-height: 1.5em;
+    padding: 0 2em;
+    box-sizing: border-box;
+    max-width: 800px;
+    text-align: center; }
+  .datavis-presentation hr {
+    max-width: 800px;
+    border: none;
+    height: 2px;
+    width: 40%;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), white, rgba(255, 255, 255, 0)); }
+  .datavis-presentation ul {
+    list-style-type: none; }
+    .datavis-presentation ul li {
+      text-align: center;
+      font-weight: bold; }
 
 .quote-container {
   width: 100%;

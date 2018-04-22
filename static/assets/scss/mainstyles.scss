@@ -4,7 +4,8 @@
 %navborders {
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
-    box-shadow: 0 0 40px rgba(0,0,0,0.2);
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.4);
+    background-color:$Light;
 }
 
 .navbar {    
@@ -17,8 +18,7 @@
     button {
         @extend %navborders;        
         font-size:2em;
-        color:$SeaGreen;
-        background-color:$White;       
+        color:$SeaGreen;           
         width:2em;
         padding:0.3em 0.5em;
         transition:color 0.2s ease-out;
@@ -31,8 +31,7 @@
     ul {
         @extend %navborders;
         width:200px;
-        padding:0;
-        background-color:$White;
+        padding:0;       
         list-style-type: none;
         margin:0;       
         display:none;    
@@ -40,12 +39,12 @@
         position:relative;  
 
         li {            
-            padding:1em 0 1em 1em;
+            padding:2em 0 2em 1em;
             position:relative;
 
             &:first-of-type {
                 border-left: 10px solid $Prussian;
-
+               
                 &:before {
                     content:'';
                     position:absolute;
@@ -64,7 +63,7 @@
 
             &:nth-of-type(2) {
                 border-left: 10px solid darken($SeaGreen, 15%);
-
+                
                 &:before {
                     content:'';
                     position:absolute;
@@ -83,7 +82,7 @@
 
             &:nth-of-type(3) {
                 border-left: 10px solid $Onyx;
-
+                
                 &:before {
                     content:'';
                     position:absolute;
@@ -100,17 +99,29 @@
                 }
             }
 
+            &:hover > a {
+                color:$Gold;
+            }
+
             a {
                 text-decoration:none;    
                 color:$Prussian;
                 font-size:1.2em;
-                transition:color 0.1s linear;
-
-                &:hover {
-                    color:$Gold;
-                }
+                transition:color 0.1s linear;      
+                width:100%;
+                height:100%;          
             }
             
         }
+    }
+}
+
+.footer {
+    background-color:$Light;
+
+    p {
+        color:rgba($Prussian, 0.7);
+        margin:0;
+        padding:1em;
     }
 }

@@ -34,19 +34,10 @@ body {
 
 }
 
+
 .home-presentation {
-	color:white;
-	display:flex;
-	flex-direction:column;
-	box-sizing: border-box;
-	align-items:center;
-	padding: 8em 0 0 0;
-	justify-content:flex-start;
-	width:100%;
+	@extend %presentations;
 	background: linear-gradient(to top left, rgba(0,0,0,0.3), rgba(0,0,0,0)),url('/assets/images/aurora.jpg');
-	height:100vh;
-	background-size:cover;
-	background-repeat:no-repeat;
 	background-position:50% 100%;
 
 	h1,p {
