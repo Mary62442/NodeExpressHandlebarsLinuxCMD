@@ -2,25 +2,26 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Example App</title>
+    <title>M. V. Burlando</title>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link href="/assets/css/aboutstyles.css" rel="stylesheet">
 	<link href="/assets/css/homestyles.css" rel="stylesheet">
     <link href="/assets/css/mainstyles.css" rel="stylesheet">
-     <link href="/assets/css/datavisstyles.css" rel="stylesheet">
+    <link href="/assets/css/datavisstyles.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src = "https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://use.fontawesome.com/78539691ab.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
 </head>
-<body>
-
-    
+<body ng-app="my-App" ng-controller = "mainController">   
     
     <nav class = "navbar">
         <button id = "nav-button" ><i class="fa fa-bars"></i></button>
         <ul id = "nav-list">
+            <li ng-bind="title"></li>
             <li><a href="/">Home</a></li>
             <li><a href="/about" > About</a></li>
             <li><a href = "/datavis"> Visualization</a></li>
@@ -34,7 +35,10 @@
 
     <script src="/assets/js/home.js"></script>
     <script src="/assets/js/datavis.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    
+   
+    <script src="/app/app.js"></script>
+    <script src="/app/controllers/mainController.js"></script>
     
  
 </body>
