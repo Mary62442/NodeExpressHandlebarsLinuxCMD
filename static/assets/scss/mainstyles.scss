@@ -1,8 +1,7 @@
 @import 'reset';
 @import 'websitecolors';
 
-%navborders {
-    border-top-right-radius: 3px;
+%navborders {    
     border-bottom-right-radius: 3px;
     box-shadow: -2px 0 10px rgba(0, 0, 0, 0.4);
     background-color:$Light;
@@ -11,9 +10,9 @@
 .navbar {    
     position:fixed;        
     z-index:2; 
-    top:50%;
+    top:0;
     left:0; 
-    transform:translatey(-50%); 
+    
 
     button {
         @extend %navborders;        

@@ -118,10 +118,14 @@ button {
   color: white;
   width: 100%;
   background-size: cover;
+  background-position: 50%;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  text-align: center;
-  padding: 3em 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2em 0;
   position: relative; }
   .tmdb-container .tmdb-source {
     position: absolute;
@@ -129,30 +133,52 @@ button {
     right: 0;
     font-size: 0.7em;
     color: rgba(255, 255, 255, 0.6);
-    padding: 0 0.5em; }
+    padding: 0 1.3em; }
 
 .movie-search-container {
-  width: 500px;
-  background-color: white;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
-  padding: 2em 0;
-  text-align: center;
-  margin: 0 auto;
-  border-radius: 3px; }
+  align-self: flex-end;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 1em; }
   .movie-search-container input {
-    width: 80%;
-    border-radius: 2px;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
     outline: none;
-    line-height: 2em;
-    padding: 0 0.3em;
-    border: 1px solid rgba(0, 0, 0, 0.3); }
+    font-size: 0.8em;
+    line-height: 2.5em;
+    padding: 0 0.8em;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-right: none; }
   .movie-search-container button {
-    padding: 1em 2em;
-    background-color: #0D324D;
+    line-height: 2.5em;
+    font-size: 0.8em;
+    padding: 0 0.8em;
+    background-color: transparent;
     color: white;
-    margin-top: 1em;
     border: none;
+    border-top: 1px solid white;
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    transition: all 0.2s ease-out; }
+    .movie-search-container button:hover {
+      background-color: #0D324D; }
+
+.movie-found {
+  display: flex;
+  width: 800px;
+  margin: 0 auto;
+  padding: 2em 0; }
+  .movie-found img {
+    border: 12px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     border-radius: 3px; }
+
+.movie-description {
+  padding: 0 2em; }
 
 .google-books-container {
   width: 100%;
@@ -252,6 +278,17 @@ button {
       .google-books-container .the-book img {
         width: 50%;
         padding-bottom: 2em; } }
+
+@media (max-width: 850px) {
+  .movie-found {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center; }
+    .movie-found img {
+      width: 185px; }
+  .movie-description {
+    padding: 0 2em; } }
 
 @media (max-width: 600px) {
   .google-books-container .the-book {
