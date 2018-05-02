@@ -31,6 +31,8 @@
 	}
 }
 
+
+
 .quote-container {
 
 	width:100%;
@@ -116,6 +118,15 @@
 	&:hover:before {	
 		right:0;
 	}
+}
+
+.tmdb-container {
+	color:$White;
+	width:100%;
+	height:500px;
+	background-size:cover;
+	background-repeat: no-repeat;	
+	background-attachment: fixed;
 }
 
 .google-books-container {
