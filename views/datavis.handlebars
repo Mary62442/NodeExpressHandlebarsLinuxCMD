@@ -24,17 +24,19 @@
 </button>
 </section>
 
-<section class = "tmdb-container" style = "background-image: linear-gradient(to left, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3)), url('http://image.tmdb.org/t/p/w780/\{{movie.backdrop_path}}')">
+<section class = "tmdb-container" style = "background-image: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5)), url('http://image.tmdb.org/t/p/w780/\{{movie.backdrop_path}}')">
 	
-	<div>
+	<div class = "movie-search-container">		
 		<input type="text" id = "movie-search" />
-		<button ng-click = "searchMovie()">Search</button>
+		<button ng-click = "searchMovie()">Search movie</button>
 	</div>
-	
-	<h1 ng-bind = "movie.original_title"></h1>
-	<p>\{{movie.release_date | date : "'Released on ' MMMM d, y"}}</p>
-	<p>\{{movie.overview}}</p>
-	<img ng-src = "http://image.tmdb.org/t/p/w185/\{{movie.poster_path}}"/>
+	<div>
+		<h1 ng-bind = "movie.original_title"></h1>
+		<p>\{{movie.release_date | date : "'Released on ' MMMM d, y"}}</p>
+		<p>\{{movie.overview}}</p>
+		<img ng-src = "http://image.tmdb.org/t/p/w185/\{{movie.poster_path}}"/>
+	</div>
+	<a href="https://www.themoviedb.org/?language=en"><p class = "tmdb-source">Courtesy of TMDB</p></a>
 </section>
 
 <section class = "google-books-container">	
