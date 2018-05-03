@@ -26,23 +26,24 @@
 </button>
 </section>
 
-<section class = "tmdb-container" style = "background-image: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5)), url('http://image.tmdb.org/t/p/w780/\{{movie.backdrop_path}}')">
-	
-	
-	<div class = "movie-found">
-		<img ng-src = "http://image.tmdb.org/t/p/w185/\{{movie.poster_path}}"/>
-		<div class = "movie-description">
-			<h1 ng-bind = "movie.original_title"></h1>
-			<p>\{{movie.release_date | date : "'Released on ' MMMM d, y"}}</p>
-			<p>Rating: \{{movie.vote_average}}</p>
-			<p>\{{movie.overview}}</p>
-		</div>		
-	</div>
+<section class = "tmdb-container" >
+	<a href="https://www.themoviedb.org/?language=en"><p class = "tmdb-source">Courtesy of TMDB</p></a>	
 	<div class = "movie-search-container">		
 		<input type="text" id = "movie-search" onkeydown = "if (event.keyCode == 13) document.getElementById('button-search').click()"/>
 		<button id="button-search" ng-click = "searchMovie()">Search movie</button>
-	</div>
-	<a href="https://www.themoviedb.org/?language=en"><p class = "tmdb-source">Courtesy of TMDB</p></a>
+		
+	</div>	
+	<div ng-repeat = "movie in movies" class = "movie-found" style = "background-image: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5)), url('http://image.tmdb.org/t/p/w780/\{{movie.backdrop_path}}')">
+		<div>
+			<img ng-src = "http://image.tmdb.org/t/p/w185/\{{movie.poster_path}}"/>
+			<div class = "movie-description">
+				<h1 ng-bind = "movie.original_title"></h1>
+				<p>\{{movie.release_date | date : "'Released on ' MMMM d, y"}}</p>
+				<p>Rating: \{{movie.vote_average}}</p>
+				<p>\{{movie.overview}}</p>
+			</div>	
+		</div>	
+	</div>	
 </section>
 
 <section class = "google-books-container">	

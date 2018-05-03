@@ -7,7 +7,7 @@ app.service('tmdb', ['$http', function($http)  {
             method: "GET",
             params: {
                 api_key: '37267a52fc129ad7d6ddb14573fb0009',
-                query: 'interstellar'
+                query: 'what dreams may come'
             }
         })        
         .then((data) => { 

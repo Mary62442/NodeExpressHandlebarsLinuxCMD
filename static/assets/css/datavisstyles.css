@@ -115,33 +115,25 @@ button {
     right: 0; }
 
 .tmdb-container {
-  color: white;
-  width: 100%;
-  background-size: cover;
-  background-position: 50%;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 2em 0;
-  position: relative; }
+  background-color: #0D324D;
+  position: relative;
+  color: white; }
+  .tmdb-container a {
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    margin: 0 auto; }
   .tmdb-container .tmdb-source {
-    position: absolute;
-    bottom: 0;
-    right: 0;
     font-size: 0.7em;
     color: rgba(255, 255, 255, 0.6);
-    padding: 0 1.3em; }
+    padding: 2em 0 0 0; }
 
 .movie-search-container {
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
   align-self: flex-end;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-right: 1em; }
+  padding: 0 0 2em 0; }
   .movie-search-container input {
     border-top-left-radius: 2px;
     border-bottom-left-radius: 2px;
@@ -165,17 +157,26 @@ button {
     border-bottom-right-radius: 2px;
     transition: all 0.2s ease-out; }
     .movie-search-container button:hover {
-      background-color: #0D324D; }
+      background-color: rgba(255, 255, 255, 0.2); }
 
 .movie-found {
-  display: flex;
-  width: 800px;
-  margin: 0 auto;
-  padding: 2em 0; }
-  .movie-found img {
-    border: 12px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-    border-radius: 3px; }
+  width: 100%;
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding: 2em 0;
+  position: relative;
+  border-bottom: 2em solid #0D324D; }
+  .movie-found div:first-child {
+    display: flex;
+    width: 800px;
+    margin: 0 auto;
+    padding: 2em 0; }
+    .movie-found div:first-child img {
+      border: 12px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+      border-radius: 3px; }
 
 .movie-description {
   padding: 0 2em; }
@@ -280,12 +281,12 @@ button {
         padding-bottom: 2em; } }
 
 @media (max-width: 850px) {
-  .movie-found {
+  .movie-found div:first-child {
     flex-direction: column;
     width: 100%;
     align-items: center;
     justify-content: center; }
-    .movie-found img {
+    .movie-found div:first-child img {
       width: 185px; }
   .movie-description {
     padding: 0 2em; } }
